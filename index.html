@@ -1,0 +1,57 @@
+<!doctype html>
+ 
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Простодушный искатель</title>
+ 
+    <link rel="stylesheet" href="style.css"><link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+</head>
+ 
+<body>
+	<div class="container">
+	  <main>
+	  <div class="main hidden" id="gameField">
+		  <header>
+			<h3>Простодушный искатель</h3>
+		  </header>
+			<div class="content">
+			  <div class="field">
+				<div class="searched-field">
+					<span id="searchedItemInfo">Здесь отобразится обнаруженный предмет. Чтобы искать, кликни по любой из локаций снизу.</span>
+					<div class="btn hidden" id="getItemBtn" onclick="getItem()">Собрать!</div>
+				</div>
+				<div onclick="generateItem()">
+					<img src="игра.jpg" class="search-field"/>
+				</div>
+			  </div>
+			  <aside>
+				<ul id="receivedItems">
+					<div class="ul-header">Мой инвентарь</div>
+				</ul>
+				<span>Собрано: <span id="receivedItemsCountEl">0</span>/<span id="allItemsCountEl"></span> предметов</span>
+				<br>
+				<span class="timer-info">Прошло <span id="timer">01 сек.</span></span>
+			  </aside>
+			</div>
+		</div>
+		<div class="start-page" id="startPage">
+			<div class="">Привет! Перед тобой игра "Простодушный искатель". Твоя задача нажимать на локации и находить предметы. Каждую находку следует различить и положить в инвентарь только в том случае, если у тебя такого предмета ещё нет. Постарайся собрать их все как можно быстрее.</div>
+			<div class="start-btn" onclick="startGame();">Поехали!</div>
+			<br>
+			<img src="старт.jpg" class="start-image">
+		</div>
+		<div class="result-page hidden" id="resultPage">
+			<div class="result-text">
+				Ура! Победа! Вышло справиться за <span id="resultText"></span> сек.
+				<div class="hidden" id="recordStatus">Это рекорд! Лучше прошлого результата на <span id="timeImprovementText"></span> сек.</div>
+				<div class="start-btn" onclick="startGame();">Начать сначала</div>
+			</div>
+			<img src="финиш.jpg">
+		</div>
+	  </main>
+	</div>
+  <script src="./js.js"></script>
+</body>
+</html>
