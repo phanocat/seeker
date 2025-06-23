@@ -137,9 +137,11 @@ function showResult() {
 	if(seconds < record || record == null) {
 		localStorage.setItem('record', seconds);
 		gameField.append = 'Это рекорд!';
-		timeImprovementText.innerHeight = record - seconds;
 		if(record != null) {
-			document.getElementById('recordStatus').classList.remove('hidden');
+			timeImprovementText.innerHTML = record - seconds;
+		} else {
+			timeImprovementText.innerHTML = "млрд";
 		}
+		document.getElementById('recordStatus').classList.remove('hidden');
 	}
 }
